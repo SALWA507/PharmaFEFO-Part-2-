@@ -1,20 +1,11 @@
 <?php
-
-class StockService
-{
-    public function addBatch()
-    {
-        return [
-            "success" => true,
-            "message" => "Lot ajouté"
-        ];
+require_once __DIR__.'/../Repository/StockRepository.php';
+class Stockservice{
+    private StockRepository $repository;
+    public function __construct(){
+        $this->repository = new StockRepository();
     }
-
-    public function deliverBox()
-    {
-        return [
-            "success" => true,
-            "message" => "Boîte délivrée"
-        ];
+    public function getLots(){
+        return $this->repository->getAllLots();
     }
 }

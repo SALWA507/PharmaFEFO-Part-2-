@@ -8,10 +8,10 @@ class AuthService
         http_response_code(403);
         exit('Acces refuse');
         }
-        if($_SESSION['role']==$role){
-            http_response_code(403);
-            exit('Acces refuse');
-        }
+       if($_SESSION['role'] !== $role){
+       http_response_code(403);
+       exit('Acces refuse');
+}
     }
 
 }
